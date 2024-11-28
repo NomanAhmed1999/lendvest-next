@@ -16,11 +16,13 @@ import Market from '@/components/custom/market';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import AOS from 'aos'
 import 'aos/dist/aos.css'
+import Loader from '@/components/custom/loader';
 
 
 
 function Beta() {
 
+  const [loader, setLoader] = useState(false)
   const [count, setCount] = useState(0)
   const [address, setAddress] = useState('');
   const [balance, setBalance] = useState('');
@@ -59,7 +61,7 @@ function Beta() {
   const [collateralProviderToCrossColletralAmount, setcollateralProviderToCrossColletralAmount] = useState('0.00');
   const [balanceOfCollateralNotUsed, setbalanceOfCollateralNotUsed] = useState('0.00');
   const [InterestPaidForCollateral, setInterestPaidForCollateral] = useState('0.00');
-  const [epochStatus, setepochStatus] = useState('No');
+  const [epochStatus, setepochStatus] = useState('OFF');
 
   // Server Utilization
   const [totalBorrowAsk, setTotalBorrowAsk] = useState<any>('0.00');
@@ -159,6 +161,7 @@ function Beta() {
 
 
   const connectWallet = async () => {
+    setLoader(true)
     try {
       if (window.ethereum) {
         // Request wallet connection
@@ -183,12 +186,15 @@ function Beta() {
         setAddress(address);
         setBalance(ethers.utils.formatEther(balance));
         console.log('Wallet connected successfully');
+        setLoader(false)
       } else {
         console.error('MetaMask is not installed. Please install MetaMask.');
+        setLoader(false)
       }
     } catch (error) {
       console.error('Error connecting to wallet:', error);
       console.error('Failed to connect to wallet');
+      setLoader(false)
     }
   };
 
@@ -308,7 +314,7 @@ const gettotalAmountOfQuoteToken = async () => {
 
   const getEpochStauts = async () => {
     const es = await contract.epochStarted();
-    es ? setepochStatus("Yes") : setepochStatus("No")
+    es ? setepochStatus("ON") : setepochStatus("OFF")
 
   };
 
@@ -374,16 +380,19 @@ const gettotalAmountOfQuoteToken = async () => {
 
 
   const ApproveLendQuoteToken = async () => {
+    setLoader(true)
     try {
       const approvTx = await WethContract.approve(LendvestAjnaAddress, ethers.utils.parseEther(`${quoteTokenAmount}`))
       await approvTx.wait();
       console.log("Approve Tx Suucessful..", approvTx)
       notifySuccess("Approve Tx Successful.")
       getAllAcounting()
-
+      setLoader(false)
+      
     } catch (error) {
       notifyError("Approve Tx Failed.")
       console.error("Approve Tx Failed..", error)
+      setLoader(false)
     }
 
   }
@@ -406,12 +415,12 @@ const gettotalAmountOfQuoteToken = async () => {
       console.log(error)
     }
 
-    if (flag) {
-      await axios.post(lend_upsert, {
-        address: address,
-        lend_amount: quoteTokenAmount
-      })
-    }
+    // if (flag) {
+    //   await axios.post(lend_upsert, {
+    //     address: address,
+    //     lend_amount: quoteTokenAmount
+    //   })
+    // }
 
   }
 
@@ -725,9 +734,14 @@ const gettotalAmountOfQuoteToken = async () => {
 
   }, []);
 
+
+
   return (
     <div>
-      <Header onBtnClick={connectWallet} wallet={address} duration={duration} isActive={isActive} setDuration={setDuration} deadline={deadline} handleReset={handleReset} />
+      {
+        loader && <Loader />
+      }
+      <Header epochStatus={epochStatus} onBtnClick={connectWallet} wallet={address} duration={duration} isActive={isActive} setDuration={setDuration} deadline={deadline} handleReset={handleReset} />
       {/* <Timer /> */}
       <div className='flex justify-center items-center flex-col mt-36 bg-white dark:bg-black'>
         <div className='w-[75%] flex justify-between flex-wrap'>

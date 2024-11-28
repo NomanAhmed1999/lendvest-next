@@ -12,7 +12,7 @@ import Timer from './timer';
 
 
 
-const Header = ({ isFull, onBtnClick, wallet, duration, isActive, setDuration, deadline, handleReset }: any) => {
+const Header = ({ isFull, onBtnClick, wallet, duration, isActive, setDuration, deadline, handleReset, epochStatus }: any) => {
     const theme = useStore((state: any) => state.theme)
     const updateTheme = useStore((state: any) => state.updateTheme)
     const router = useRouter();
@@ -72,7 +72,7 @@ const Header = ({ isFull, onBtnClick, wallet, duration, isActive, setDuration, d
                     </Button>
                 </div>
             </div>
-            <Timer duration={duration} isActive={isActive} setDuration={setDuration} deadline={deadline} handleReset={handleReset} />
+            <Timer epochStatus={epochStatus} duration={duration} isActive={isActive} setDuration={setDuration} deadline={deadline} handleReset={handleReset} />
         </div>
     )
 }

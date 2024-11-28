@@ -9,11 +9,13 @@
 // export const LendvestAjnaAddress = "0xd5bfc8fbc754b41b47e43b65777d08617841a2d8"
 // export const LendvestAjnaAddress = "0x2D5efFfF6BdA191c7c6bD15d82d1DeaE51954f17";
 // export const LendvestAjnaAddress = "0x5ad4bbee1cffc81af06168bff6f5fdcd5f0cfdf9";
-export const LendvestAjnaAddress = "0xCE60A6Cc5b377747800BE9E1E32d9a4178DD3de4";
+// export const LendvestAjnaAddress = "0xCE60A6Cc5b377747800BE9E1E32d9a4178DD3de4";
+export const LendvestAjnaAddress = "0x2af6C31070b2A5E64E9642D230391f6a3D840ef1";
 
 //  change the pool addresss every time
 //export const PoolAddress = "0xA4a0abD2f2CEfa0669f45D35086825FC6BD20135";
-export const PoolAddress = "0xfE6A2D228dc22C606ccA1d85cD5F8ffb490ebD83";
+// export const PoolAddress = "0xfE6A2D228dc22C606ccA1d85cD5F8ffb490ebD83";
+export const PoolAddress = "0x0439B8CF356f444b0f2e90482927D58B635b1B5a";
 
 export const WethAddress = "0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619";
 export const WSTethAddress = "0x03b54A6e9a984069379fae1a4fC4dBAE93B3bCCD";
@@ -4015,1114 +4017,1661 @@ export const WethABI = [
 
 export const LendvestAjnaABI = [
   {
-    type: "constructor",
-    inputs: [
-      {
-        name: "_pool",
-        type: "address",
-        internalType: "address",
-      },
-      {
-        name: "_owner",
-        type: "address",
-        internalType: "address",
-      },
-      {
-        name: "_aaveLendingPool",
-        type: "address",
-        internalType: "address",
-      },
-    ],
-    stateMutability: "nonpayable",
-  },
-  {
-    type: "function",
-    name: "aaveLendingPool",
-    inputs: [],
-    outputs: [
-      {
-        name: "",
-        type: "address",
-        internalType: "contract IAaveLendingPool",
-      },
-    ],
-    stateMutability: "view",
-  },
-  {
-    type: "function",
-    name: "amountEarnedByLender",
-    inputs: [
-      {
-        name: "_address",
-        type: "address",
-        internalType: "address",
-      },
-    ],
-    outputs: [
-      {
-        name: "",
-        type: "uint256",
-        internalType: "uint256",
-      },
-    ],
-    stateMutability: "view",
-  },
-  {
-    type: "function",
-    name: "aweth",
-    inputs: [],
-    outputs: [
-      {
-        name: "",
-        type: "address",
-        internalType: "address",
-      },
-    ],
-    stateMutability: "view",
-  },
-  {
-    type: "function",
-    name: "balanceCollateralRatioLendvest",
-    inputs: [],
-    outputs: [
-      {
-        name: "",
-        type: "uint256",
-        internalType: "uint256",
-      },
-      {
-        name: "",
-        type: "uint256",
-        internalType: "uint256",
-      },
-    ],
-    stateMutability: "nonpayable",
-  },
-  {
-    type: "function",
-    name: "balanceOfCollateralNotUsed",
-    inputs: [
-      {
-        name: "_address",
-        type: "address",
-        internalType: "address",
-      },
-    ],
-    outputs: [
-      {
-        name: "",
-        type: "uint256",
-        internalType: "uint256",
-      },
-    ],
-    stateMutability: "view",
-  },
-  {
-    type: "function",
-    name: "borrow",
-    inputs: [
-      {
-        name: "amountToBorrow",
-        type: "uint256",
-        internalType: "uint256",
-      },
-      {
-        name: "collateralToPledge",
-        type: "uint256",
-        internalType: "uint256",
-      },
-    ],
-    outputs: [],
-    stateMutability: "nonpayable",
-  },
-  {
-    type: "function",
-    name: "borrowerToAtoken",
-    inputs: [
-      {
-        name: "",
-        type: "address",
-        internalType: "address",
-      },
-    ],
-    outputs: [
-      {
-        name: "",
-        type: "uint256",
-        internalType: "uint256",
-      },
-    ],
-    stateMutability: "view",
-  },
-  {
-    type: "function",
-    name: "borrowerToBorrowAmount",
-    inputs: [
-      {
-        name: "",
-        type: "address",
-        internalType: "address",
-      },
-    ],
-    outputs: [
-      {
-        name: "",
-        type: "uint256",
-        internalType: "uint256",
-      },
-    ],
-    stateMutability: "view",
-  },
-  {
-    type: "function",
-    name: "borrowerToCollateralAmount",
-    inputs: [
-      {
-        name: "",
-        type: "address",
-        internalType: "address",
-      },
-    ],
-    outputs: [
-      {
-        name: "",
-        type: "uint256",
-        internalType: "uint256",
-      },
-    ],
-    stateMutability: "view",
-  },
-  {
-    type: "function",
-    name: "borrowerToReserve",
-    inputs: [
-      {
-        name: "",
-        type: "address",
-        internalType: "address",
-      },
-    ],
-    outputs: [
-      {
-        name: "",
-        type: "uint256",
-        internalType: "uint256",
-      },
-    ],
-    stateMutability: "view",
-  },
-  {
-    type: "function",
-    name: "bucketIndex",
-    inputs: [],
-    outputs: [
-      {
-        name: "",
-        type: "uint256",
-        internalType: "uint256",
-      },
-    ],
-    stateMutability: "view",
-  },
-  {
-    type: "function",
-    name: "calculateCollateral",
-    inputs: [
-      {
-        name: "amountToBorrowInWETH",
-        type: "uint256",
-        internalType: "uint256",
-      },
-    ],
-    outputs: [
-      {
-        name: "collateralInWstETH",
-        type: "uint256",
-        internalType: "uint256",
-      },
-    ],
-    stateMutability: "pure",
-  },
-  {
-    type: "function",
-    name: "clearPool",
-    inputs: [],
-    outputs: [],
-    stateMutability: "nonpayable",
-  },
-  {
-    type: "function",
-    name: "collateralProviderToCrossColletralAmount",
-    inputs: [
-      {
-        name: "",
-        type: "address",
-        internalType: "address",
-      },
-    ],
-    outputs: [
-      {
-        name: "",
-        type: "uint256",
-        internalType: "uint256",
-      },
-    ],
-    stateMutability: "view",
-  },
-  {
-    type: "function",
-    name: "collateralProviderToSuppliedAmount",
-    inputs: [
-      {
-        name: "",
-        type: "address",
-        internalType: "address",
-      },
-    ],
-    outputs: [
-      {
-        name: "",
-        type: "uint256",
-        internalType: "uint256",
-      },
-    ],
-    stateMutability: "view",
-  },
-  {
-    type: "function",
-    name: "depositCollateralForLiquidation",
-    inputs: [
-      {
-        name: "amount",
-        type: "uint256",
-        internalType: "uint256",
-      },
-    ],
-    outputs: [],
-    stateMutability: "nonpayable",
-  },
-  {
-    type: "function",
-    name: "end_epoch",
-    inputs: [],
-    outputs: [],
-    stateMutability: "nonpayable",
-  },
-  {
-    type: "function",
-    name: "epoch",
-    inputs: [],
-    outputs: [
-      {
-        name: "",
-        type: "uint256",
-        internalType: "uint256",
-      },
-    ],
-    stateMutability: "view",
-  },
-  {
-    type: "function",
-    name: "epochStarted",
-    inputs: [],
-    outputs: [
-      {
-        name: "",
-        type: "bool",
-        internalType: "bool",
-      },
-    ],
-    stateMutability: "view",
-  },
-  {
-    type: "function",
-    name: "epochTime",
-    inputs: [],
-    outputs: [
-      {
-        name: "",
-        type: "uint256",
-        internalType: "uint256",
-      },
-    ],
-    stateMutability: "view",
-  },
-  {
-    type: "function",
-    name: "getBalanceOnAave",
-    inputs: [],
-    outputs: [
-      {
-        name: "",
-        type: "uint256",
-        internalType: "uint256",
-      },
-    ],
-    stateMutability: "view",
-  },
-  {
-    type: "function",
-    name: "getCollateralAddress",
-    inputs: [],
-    outputs: [
-      {
-        name: "",
-        type: "address",
-        internalType: "address",
-      },
-    ],
-    stateMutability: "view",
-  },
-  {
-    type: "function",
-    name: "getInterestInfo",
-    inputs: [],
-    outputs: [
-      {
-        name: "",
-        type: "uint256",
-        internalType: "uint256",
-      },
-      {
-        name: "",
-        type: "uint256",
-        internalType: "uint256",
-      },
-    ],
-    stateMutability: "view",
-  },
-  {
-    type: "function",
-    name: "getInterestPaidByBorrowerToGetFullCollateral",
-    inputs: [
-      {
-        name: "borrowAmount",
-        type: "uint256",
-        internalType: "uint256",
-      },
-    ],
-    outputs: [
-      {
-        name: "",
-        type: "uint256",
-        internalType: "uint256",
-      },
-    ],
-    stateMutability: "view",
-  },
-  {
-    type: "function",
-    name: "getPoolAddress",
-    inputs: [],
-    outputs: [
-      {
-        name: "",
-        type: "address",
-        internalType: "address",
-      },
-    ],
-    stateMutability: "view",
-  },
-  {
-    type: "function",
-    name: "getQuoteTokenAddress",
-    inputs: [],
-    outputs: [
-      {
-        name: "",
-        type: "address",
-        internalType: "address",
-      },
-    ],
-    stateMutability: "view",
-  },
-  {
-    type: "function",
-    name: "interestEarnedByUser",
-    inputs: [
-      {
-        name: "",
-        type: "address",
-        internalType: "address",
-      },
-    ],
-    outputs: [
-      {
-        name: "",
-        type: "uint256",
-        internalType: "uint256",
-      },
-    ],
-    stateMutability: "view",
-  },
-  {
-    type: "function",
-    name: "lendQuoteToken",
-    inputs: [
-      {
-        name: "amount",
-        type: "uint256",
-        internalType: "uint256",
-      },
-    ],
-    outputs: [],
-    stateMutability: "nonpayable",
-  },
-  {
-    type: "function",
-    name: "limitbucketIndex",
-    inputs: [],
-    outputs: [
-      {
-        name: "",
-        type: "uint256",
-        internalType: "uint256",
-      },
-    ],
-    stateMutability: "view",
-  },
-  {
-    type: "function",
-    name: "morphoVault",
-    inputs: [],
-    outputs: [
-      {
-        name: "",
-        type: "address",
-        internalType: "contract ILendvestMorphoVault",
-      },
-    ],
-    stateMutability: "view",
-  },
-  {
-    type: "function",
-    name: "owner",
-    inputs: [],
-    outputs: [
-      {
-        name: "",
-        type: "address",
-        internalType: "address",
-      },
-    ],
-    stateMutability: "view",
-  },
-  {
-    type: "function",
-    name: "pool",
-    inputs: [],
-    outputs: [
-      {
-        name: "",
-        type: "address",
-        internalType: "contract IERC20Pool",
-      },
-    ],
-    stateMutability: "view",
-  },
-  {
-    type: "function",
-    name: "repay",
-    inputs: [
-      {
-        name: "collateralAmountToPull_",
-        type: "uint256",
-        internalType: "uint256",
-      },
-    ],
-    outputs: [],
-    stateMutability: "nonpayable",
-  },
-  {
-    type: "function",
-    name: "repayTest",
-    inputs: [
-      {
-        name: "collateralAmountToPull_",
-        type: "uint256",
-        internalType: "uint256",
-      },
-      {
-        name: "maxQuoteTokenAmountToRepay_",
-        type: "uint256",
-        internalType: "uint256",
-      },
-    ],
-    outputs: [],
-    stateMutability: "nonpayable",
-  },
-  {
-    type: "function",
-    name: "setBucketIndex",
-    inputs: [
-      {
-        name: "_bucketIndex",
-        type: "uint256",
-        internalType: "uint256",
-      },
-    ],
-    outputs: [],
-    stateMutability: "nonpayable",
-  },
-  {
-    type: "function",
-    name: "setEpochTime",
-    inputs: [
-      {
-        name: "mints",
-        type: "uint256",
-        internalType: "uint256",
-      },
-    ],
-    outputs: [],
-    stateMutability: "nonpayable",
-  },
-  {
-    type: "function",
-    name: "setLimitBucketIndex",
-    inputs: [
-      {
-        name: "_limitBucketIndex",
-        type: "uint256",
-        internalType: "uint256",
-      },
-    ],
-    outputs: [],
-    stateMutability: "nonpayable",
-  },
-  {
-    type: "function",
-    name: "setVault",
-    inputs: [
-      {
-        name: "_pool",
-        type: "address",
-        internalType: "address",
-      },
-    ],
-    outputs: [],
-    stateMutability: "nonpayable",
-  },
-  {
-    type: "function",
-    name: "setX",
-    inputs: [
-      {
-        name: "_percentage",
-        type: "uint256",
-        internalType: "uint256",
-      },
-    ],
-    outputs: [],
-    stateMutability: "nonpayable",
-  },
-  {
-    type: "function",
-    name: "setY",
-    inputs: [
-      {
-        name: "_percentage",
-        type: "uint256",
-        internalType: "uint256",
-      },
-    ],
-    outputs: [],
-    stateMutability: "nonpayable",
-  },
-  {
-    type: "function",
-    name: "start_epoch",
-    inputs: [
-      {
-        name: "mint",
-        type: "uint256",
-        internalType: "uint256",
-      },
-    ],
-    outputs: [],
-    stateMutability: "nonpayable",
-  },
-  {
-    type: "function",
-    name: "supplierToAmount",
-    inputs: [
-      {
-        name: "",
-        type: "address",
-        internalType: "address",
-      },
-    ],
-    outputs: [
-      {
-        name: "",
-        type: "uint256",
-        internalType: "uint256",
-      },
-    ],
-    stateMutability: "view",
-  },
-  {
-    type: "function",
-    name: "totalAmountOfBorrowed",
-    inputs: [],
-    outputs: [
-      {
-        name: "",
-        type: "uint256",
-        internalType: "uint256",
-      },
-    ],
-    stateMutability: "view",
-  },
-  {
-    type: "function",
-    name: "totalAmountOfCollateral",
-    inputs: [],
-    outputs: [
-      {
-        name: "",
-        type: "uint256",
-        internalType: "uint256",
-      },
-    ],
-    stateMutability: "view",
-  },
-  {
-    type: "function",
-    name: "totalAmountOfQuoteToken",
-    inputs: [],
-    outputs: [
-      {
-        name: "",
-        type: "uint256",
-        internalType: "uint256",
-      },
-    ],
-    stateMutability: "view",
-  },
-  {
-    type: "function",
-    name: "totalAmountOnAave",
-    inputs: [],
-    outputs: [
-      {
-        name: "",
-        type: "uint256",
-        internalType: "uint256",
-      },
-    ],
-    stateMutability: "view",
-  },
-  {
-    type: "function",
-    name: "totalHelpingCollateral",
-    inputs: [],
-    outputs: [
-      {
-        name: "",
-        type: "uint256",
-        internalType: "uint256",
-      },
-    ],
-    stateMutability: "view",
-  },
-  {
-    type: "function",
-    name: "weth",
-    inputs: [],
-    outputs: [
-      {
-        name: "",
-        type: "address",
-        internalType: "address",
-      },
-    ],
-    stateMutability: "view",
-  },
-  {
-    type: "function",
-    name: "withdrawCollateralForLiquidation",
-    inputs: [
-      {
-        name: "amount",
-        type: "uint256",
-        internalType: "uint256",
-      },
-    ],
-    outputs: [],
-    stateMutability: "nonpayable",
-  },
-  {
-    type: "function",
-    name: "withdrawCollateralFromAjnaTest",
-    inputs: [
-      {
-        name: "amount",
-        type: "uint256",
-        internalType: "uint256",
-      },
-    ],
-    outputs: [],
-    stateMutability: "nonpayable",
-  },
-  {
-    type: "function",
-    name: "withdrawQuoteToken",
-    inputs: [
-      {
-        name: "amount",
-        type: "uint256",
-        internalType: "uint256",
-      },
-    ],
-    outputs: [],
-    stateMutability: "nonpayable",
-  },
-  {
-    type: "function",
-    name: "withdrawQuoteTokenFromAaveTest",
-    inputs: [
-      {
-        name: "amount",
-        type: "uint256",
-        internalType: "uint256",
-      },
-    ],
-    outputs: [],
-    stateMutability: "nonpayable",
-  },
-  {
-    type: "function",
-    name: "withdrawQuoteTokenFromAjnaTest",
-    inputs: [
-      {
-        name: "amount",
-        type: "uint256",
-        internalType: "uint256",
-      },
-    ],
-    outputs: [],
-    stateMutability: "nonpayable",
-  },
-  {
-    type: "event",
-    name: "BalanceCollateralRatio",
-    inputs: [
-      {
-        name: "collateralProvider",
-        type: "address",
-        indexed: false,
-        internalType: "address",
-      },
-      {
-        name: "borrower",
-        type: "address",
-        indexed: false,
-        internalType: "address",
-      },
-      {
-        name: "colletralAmount",
-        type: "uint256",
-        indexed: false,
-        internalType: "uint256",
-      },
-    ],
-    anonymous: false,
-  },
-  {
-    type: "event",
-    name: "Borrow",
-    inputs: [
-      {
-        name: "_address",
-        type: "address",
-        indexed: false,
-        internalType: "address",
-      },
-      {
-        name: "colletralAmount",
-        type: "uint256",
-        indexed: false,
-        internalType: "uint256",
-      },
-      {
-        name: "borrowAmount",
-        type: "uint256",
-        indexed: false,
-        internalType: "uint256",
-      },
-    ],
-    anonymous: false,
-  },
-  {
-    type: "event",
-    name: "DepositCollateralForLiquidation",
-    inputs: [
-      {
-        name: "_address",
-        type: "address",
-        indexed: false,
-        internalType: "address",
-      },
-      {
-        name: "colletralAmount",
-        type: "uint256",
-        indexed: false,
-        internalType: "uint256",
-      },
-    ],
-    anonymous: false,
-  },
-  {
-    type: "event",
-    name: "EndEpoch",
-    inputs: [
-      {
-        name: "time",
-        type: "uint256",
-        indexed: false,
-        internalType: "uint256",
-      },
-    ],
-    anonymous: false,
-  },
-  {
-    type: "event",
-    name: "LendQuoteToken",
-    inputs: [
-      {
-        name: "_address",
-        type: "address",
-        indexed: false,
-        internalType: "address",
-      },
-      {
-        name: "amount",
-        type: "uint256",
-        indexed: false,
-        internalType: "uint256",
-      },
-    ],
-    anonymous: false,
-  },
-  {
-    type: "event",
-    name: "Repay",
-    inputs: [
-      {
-        name: "_address",
-        type: "address",
-        indexed: false,
-        internalType: "address",
-      },
-      {
-        name: "colletralAmount",
-        type: "uint256",
-        indexed: false,
-        internalType: "uint256",
-      },
-      {
-        name: "repayAmount",
-        type: "uint256",
-        indexed: false,
-        internalType: "uint256",
-      },
-    ],
-    anonymous: false,
-  },
-  {
-    type: "event",
-    name: "StartEpoch",
-    inputs: [
-      {
-        name: "time",
-        type: "uint256",
-        indexed: false,
-        internalType: "uint256",
-      },
-    ],
-    anonymous: false,
-  },
-  {
-    type: "event",
-    name: "WithdrawCollateralForLiquidation",
-    inputs: [
-      {
-        name: "_address",
-        type: "address",
-        indexed: false,
-        internalType: "address",
-      },
-      {
-        name: "colletralAmount",
-        type: "uint256",
-        indexed: false,
-        internalType: "uint256",
-      },
-    ],
-    anonymous: false,
-  },
-  {
-    type: "event",
-    name: "WithdrawQuoteToken",
-    inputs: [
-      {
-        name: "_address",
-        type: "address",
-        indexed: false,
-        internalType: "address",
-      },
-      {
-        name: "amount",
-        type: "uint256",
-        indexed: false,
-        internalType: "uint256",
-      },
-    ],
-    anonymous: false,
-  },
-  {
-    type: "error",
-    name: "AmountConsumedToAvoidLiquidity",
-    inputs: [
-      {
-        name: "owner",
-        type: "address",
-        internalType: "address",
-      },
-      {
-        name: "amount",
-        type: "uint256",
-        internalType: "uint256",
-      },
-    ],
-  },
-  {
-    type: "error",
-    name: "AmountShouldNotZero",
-    inputs: [
-      {
-        name: "borrower",
-        type: "address",
-        internalType: "address",
-      },
-      {
-        name: "amount",
-        type: "uint256",
-        internalType: "uint256",
-      },
-    ],
-  },
-  {
-    type: "error",
-    name: "EpochNotStarted",
-    inputs: [
-      {
-        name: "owner",
-        type: "address",
-        internalType: "address",
-      },
-      {
-        name: "shares",
-        type: "uint256",
-        internalType: "uint256",
-      },
-      {
-        name: "max",
-        type: "uint256",
-        internalType: "uint256",
-      },
-    ],
-  },
-  {
-    type: "error",
-    name: "EpochStarted",
-    inputs: [
-      {
-        name: "owner",
-        type: "address",
-        internalType: "address",
-      },
-      {
-        name: "timestamp",
-        type: "uint256",
-        internalType: "uint256",
-      },
-    ],
-  },
-  {
-    type: "error",
-    name: "NotAnOwner",
-    inputs: [
-      {
-        name: "owner",
-        type: "address",
-        internalType: "address",
-      },
-    ],
-  },
-  {
-    type: "error",
-    name: "NotEnoughCollateralToken",
-    inputs: [
-      {
-        name: "owner",
-        type: "address",
-        internalType: "address",
-      },
-      {
-        name: "amount",
-        type: "uint256",
-        internalType: "uint256",
-      },
-    ],
-  },
-  {
-    type: "error",
-    name: "NotEnoughQuoteToken",
-    inputs: [
-      {
-        name: "owner",
-        type: "address",
-        internalType: "address",
-      },
-      {
-        name: "amount",
-        type: "uint256",
-        internalType: "uint256",
-      },
-    ],
-  },
-  {
-    type: "error",
-    name: "NotEnoughQuoteTokenInContract",
-    inputs: [
-      {
-        name: "owner",
-        type: "address",
-        internalType: "address",
-      },
-      {
-        name: "amount",
-        type: "uint256",
-        internalType: "uint256",
-      },
-    ],
-  },
-  {
-    type: "error",
-    name: "underCollateralize",
-    inputs: [
-      {
-        name: "borrower",
-        type: "address",
-        internalType: "address",
-      },
-      {
-        name: "amount",
-        type: "uint256",
-        internalType: "uint256",
-      },
-    ],
-  },
+     "inputs":[
+        {
+           "internalType":"address",
+           "name":"_pool",
+           "type":"address"
+        },
+        {
+           "internalType":"address",
+           "name":"_owner",
+           "type":"address"
+        },
+        {
+           "internalType":"address",
+           "name":"_aaveLendingPool",
+           "type":"address"
+        },
+        {
+           "internalType":"address",
+           "name":"_poolInfoUtils",
+           "type":"address"
+        },
+        {
+           "internalType":"address",
+           "name":"_liquidationProxy",
+           "type":"address"
+        }
+     ],
+     "stateMutability":"nonpayable",
+     "type":"constructor"
+  },
+  {
+     "inputs":[
+        {
+           "internalType":"address",
+           "name":"target",
+           "type":"address"
+        }
+     ],
+     "name":"AddressEmptyCode",
+     "type":"error"
+  },
+  {
+     "inputs":[
+        {
+           "internalType":"address",
+           "name":"account",
+           "type":"address"
+        }
+     ],
+     "name":"AddressInsufficientBalance",
+     "type":"error"
+  },
+  {
+     "inputs":[
+        {
+           "internalType":"address",
+           "name":"owner",
+           "type":"address"
+        },
+        {
+           "internalType":"uint256",
+           "name":"amount",
+           "type":"uint256"
+        }
+     ],
+     "name":"AmountConsumedToAvoidLiquidity",
+     "type":"error"
+  },
+  {
+     "inputs":[
+        {
+           "internalType":"address",
+           "name":"borrower",
+           "type":"address"
+        },
+        {
+           "internalType":"uint256",
+           "name":"amount",
+           "type":"uint256"
+        }
+     ],
+     "name":"AmountShouldNotZero",
+     "type":"error"
+  },
+  {
+     "inputs":[
+        {
+           "internalType":"address",
+           "name":"owner",
+           "type":"address"
+        },
+        {
+           "internalType":"uint256",
+           "name":"shares",
+           "type":"uint256"
+        },
+        {
+           "internalType":"uint256",
+           "name":"max",
+           "type":"uint256"
+        }
+     ],
+     "name":"EpochNotStarted",
+     "type":"error"
+  },
+  {
+     "inputs":[
+        {
+           "internalType":"address",
+           "name":"owner",
+           "type":"address"
+        },
+        {
+           "internalType":"uint256",
+           "name":"timestamp",
+           "type":"uint256"
+        }
+     ],
+     "name":"EpochStarted",
+     "type":"error"
+  },
+  {
+     "inputs":[
+        
+     ],
+     "name":"FailedInnerCall",
+     "type":"error"
+  },
+  {
+     "inputs":[
+        {
+           "internalType":"address",
+           "name":"owner",
+           "type":"address"
+        }
+     ],
+     "name":"NotAnOwner",
+     "type":"error"
+  },
+  {
+     "inputs":[
+        {
+           "internalType":"address",
+           "name":"owner",
+           "type":"address"
+        },
+        {
+           "internalType":"uint256",
+           "name":"amount",
+           "type":"uint256"
+        }
+     ],
+     "name":"NotEnoughCollateralToken",
+     "type":"error"
+  },
+  {
+     "inputs":[
+        {
+           "internalType":"address",
+           "name":"owner",
+           "type":"address"
+        },
+        {
+           "internalType":"uint256",
+           "name":"amount",
+           "type":"uint256"
+        }
+     ],
+     "name":"NotEnoughQuoteToken",
+     "type":"error"
+  },
+  {
+     "inputs":[
+        {
+           "internalType":"address",
+           "name":"owner",
+           "type":"address"
+        },
+        {
+           "internalType":"uint256",
+           "name":"amount",
+           "type":"uint256"
+        }
+     ],
+     "name":"NotEnoughQuoteTokenInContract",
+     "type":"error"
+  },
+  {
+     "inputs":[
+        {
+           "internalType":"address",
+           "name":"token",
+           "type":"address"
+        }
+     ],
+     "name":"SafeERC20FailedOperation",
+     "type":"error"
+  },
+  {
+     "inputs":[
+        {
+           "internalType":"address",
+           "name":"borrower",
+           "type":"address"
+        },
+        {
+           "internalType":"uint256",
+           "name":"amount",
+           "type":"uint256"
+        }
+     ],
+     "name":"underCollateralize",
+     "type":"error"
+  },
+  {
+     "anonymous":false,
+     "inputs":[
+        {
+           "indexed":false,
+           "internalType":"address",
+           "name":"collateralProvider",
+           "type":"address"
+        },
+        {
+           "indexed":false,
+           "internalType":"address",
+           "name":"borrower",
+           "type":"address"
+        },
+        {
+           "indexed":false,
+           "internalType":"uint256",
+           "name":"colletralAmount",
+           "type":"uint256"
+        }
+     ],
+     "name":"BalanceCollateralRatio",
+     "type":"event"
+  },
+  {
+     "anonymous":false,
+     "inputs":[
+        {
+           "indexed":false,
+           "internalType":"address",
+           "name":"_address",
+           "type":"address"
+        },
+        {
+           "indexed":false,
+           "internalType":"uint256",
+           "name":"colletralAmount",
+           "type":"uint256"
+        },
+        {
+           "indexed":false,
+           "internalType":"uint256",
+           "name":"borrowAmount",
+           "type":"uint256"
+        }
+     ],
+     "name":"Borrow",
+     "type":"event"
+  },
+  {
+     "anonymous":false,
+     "inputs":[
+        {
+           "indexed":false,
+           "internalType":"address",
+           "name":"_address",
+           "type":"address"
+        },
+        {
+           "indexed":false,
+           "internalType":"uint256",
+           "name":"colletralAmount",
+           "type":"uint256"
+        }
+     ],
+     "name":"DepositCollateralForLiquidation",
+     "type":"event"
+  },
+  {
+     "anonymous":false,
+     "inputs":[
+        {
+           "indexed":false,
+           "internalType":"uint256",
+           "name":"time",
+           "type":"uint256"
+        }
+     ],
+     "name":"EndEpoch",
+     "type":"event"
+  },
+  {
+     "anonymous":false,
+     "inputs":[
+        {
+           "indexed":true,
+           "internalType":"address",
+           "name":"kicker",
+           "type":"address"
+        },
+        {
+           "indexed":false,
+           "internalType":"uint256",
+           "name":"bondsize",
+           "type":"uint256"
+        }
+     ],
+     "name":"KickByVault",
+     "type":"event"
+  },
+  {
+     "anonymous":false,
+     "inputs":[
+        {
+           "indexed":false,
+           "internalType":"address",
+           "name":"_address",
+           "type":"address"
+        },
+        {
+           "indexed":false,
+           "internalType":"uint256",
+           "name":"amount",
+           "type":"uint256"
+        }
+     ],
+     "name":"LendQuoteToken",
+     "type":"event"
+  },
+  {
+     "anonymous":false,
+     "inputs":[
+        {
+           "indexed":true,
+           "internalType":"bytes32",
+           "name":"requestId",
+           "type":"bytes32"
+        },
+        {
+           "indexed":false,
+           "internalType":"bytes",
+           "name":"result",
+           "type":"bytes"
+        },
+        {
+           "indexed":false,
+           "internalType":"uint256",
+           "name":"rate",
+           "type":"uint256"
+        },
+        {
+           "indexed":false,
+           "internalType":"bytes",
+           "name":"err",
+           "type":"bytes"
+        }
+     ],
+     "name":"OCRResponse",
+     "type":"event"
+  },
+  {
+     "anonymous":false,
+     "inputs":[
+        {
+           "indexed":false,
+           "internalType":"address",
+           "name":"_address",
+           "type":"address"
+        },
+        {
+           "indexed":false,
+           "internalType":"uint256",
+           "name":"colletralAmount",
+           "type":"uint256"
+        },
+        {
+           "indexed":false,
+           "internalType":"uint256",
+           "name":"repayAmount",
+           "type":"uint256"
+        }
+     ],
+     "name":"Repay",
+     "type":"event"
+  },
+  {
+     "anonymous":false,
+     "inputs":[
+        {
+           "indexed":false,
+           "internalType":"string",
+           "name":"msg",
+           "type":"string"
+        }
+     ],
+     "name":"RequestRevertedWithErrorMsg",
+     "type":"event"
+  },
+  {
+     "anonymous":false,
+     "inputs":[
+        {
+           "indexed":false,
+           "internalType":"bytes",
+           "name":"data",
+           "type":"bytes"
+        }
+     ],
+     "name":"RequestRevertedWithoutErrorMsg",
+     "type":"event"
+  },
+  {
+     "anonymous":false,
+     "inputs":[
+        {
+           "indexed":false,
+           "internalType":"uint256",
+           "name":"time",
+           "type":"uint256"
+        }
+     ],
+     "name":"StartEpoch",
+     "type":"event"
+  },
+  {
+     "anonymous":false,
+     "inputs":[
+        {
+           "indexed":false,
+           "internalType":"address",
+           "name":"_address",
+           "type":"address"
+        },
+        {
+           "indexed":false,
+           "internalType":"uint256",
+           "name":"colletralAmount",
+           "type":"uint256"
+        }
+     ],
+     "name":"WithdrawCollateralForLiquidation",
+     "type":"event"
+  },
+  {
+     "anonymous":false,
+     "inputs":[
+        {
+           "indexed":false,
+           "internalType":"address",
+           "name":"_address",
+           "type":"address"
+        },
+        {
+           "indexed":false,
+           "internalType":"uint256",
+           "name":"amount",
+           "type":"uint256"
+        }
+     ],
+     "name":"WithdrawQuoteToken",
+     "type":"event"
+  },
+  {
+     "inputs":[
+        
+     ],
+     "name":"aaveLendingPool",
+     "outputs":[
+        {
+           "internalType":"contract IAaveLendingPool",
+           "name":"",
+           "type":"address"
+        }
+     ],
+     "stateMutability":"view",
+     "type":"function"
+  },
+  {
+     "inputs":[
+        {
+           "internalType":"address",
+           "name":"_address",
+           "type":"address"
+        }
+     ],
+     "name":"amountEarnedByLender",
+     "outputs":[
+        {
+           "internalType":"uint256",
+           "name":"",
+           "type":"uint256"
+        }
+     ],
+     "stateMutability":"view",
+     "type":"function"
+  },
+  {
+     "inputs":[
+        
+     ],
+     "name":"aweth",
+     "outputs":[
+        {
+           "internalType":"address",
+           "name":"",
+           "type":"address"
+        }
+     ],
+     "stateMutability":"view",
+     "type":"function"
+  },
+  {
+     "inputs":[
+        
+     ],
+     "name":"balanceCollateralRatioLendvest",
+     "outputs":[
+        {
+           "internalType":"uint256",
+           "name":"",
+           "type":"uint256"
+        },
+        {
+           "internalType":"uint256",
+           "name":"",
+           "type":"uint256"
+        }
+     ],
+     "stateMutability":"nonpayable",
+     "type":"function"
+  },
+  {
+     "inputs":[
+        {
+           "internalType":"address",
+           "name":"_address",
+           "type":"address"
+        }
+     ],
+     "name":"balanceOfCollateralNotUsed",
+     "outputs":[
+        {
+           "internalType":"uint256",
+           "name":"",
+           "type":"uint256"
+        }
+     ],
+     "stateMutability":"view",
+     "type":"function"
+  },
+  {
+     "inputs":[
+        {
+           "internalType":"uint256",
+           "name":"amountToBorrow",
+           "type":"uint256"
+        },
+        {
+           "internalType":"uint256",
+           "name":"collateralToPledge",
+           "type":"uint256"
+        }
+     ],
+     "name":"borrow",
+     "outputs":[
+        
+     ],
+     "stateMutability":"nonpayable",
+     "type":"function"
+  },
+  {
+     "inputs":[
+        {
+           "internalType":"address",
+           "name":"",
+           "type":"address"
+        }
+     ],
+     "name":"borrowerToAtoken",
+     "outputs":[
+        {
+           "internalType":"uint256",
+           "name":"",
+           "type":"uint256"
+        }
+     ],
+     "stateMutability":"view",
+     "type":"function"
+  },
+  {
+     "inputs":[
+        {
+           "internalType":"address",
+           "name":"",
+           "type":"address"
+        }
+     ],
+     "name":"borrowerToBorrowAmount",
+     "outputs":[
+        {
+           "internalType":"uint256",
+           "name":"",
+           "type":"uint256"
+        }
+     ],
+     "stateMutability":"view",
+     "type":"function"
+  },
+  {
+     "inputs":[
+        {
+           "internalType":"address",
+           "name":"",
+           "type":"address"
+        }
+     ],
+     "name":"borrowerToCollateralAmount",
+     "outputs":[
+        {
+           "internalType":"uint256",
+           "name":"",
+           "type":"uint256"
+        }
+     ],
+     "stateMutability":"view",
+     "type":"function"
+  },
+  {
+     "inputs":[
+        {
+           "internalType":"address",
+           "name":"",
+           "type":"address"
+        }
+     ],
+     "name":"borrowerToDebt",
+     "outputs":[
+        {
+           "internalType":"uint256",
+           "name":"",
+           "type":"uint256"
+        }
+     ],
+     "stateMutability":"view",
+     "type":"function"
+  },
+  {
+     "inputs":[
+        {
+           "internalType":"address",
+           "name":"",
+           "type":"address"
+        }
+     ],
+     "name":"borrowerToExtraAmount",
+     "outputs":[
+        {
+           "internalType":"uint256",
+           "name":"",
+           "type":"uint256"
+        }
+     ],
+     "stateMutability":"view",
+     "type":"function"
+  },
+  {
+     "inputs":[
+        {
+           "internalType":"address",
+           "name":"",
+           "type":"address"
+        }
+     ],
+     "name":"borrowerToReserve",
+     "outputs":[
+        {
+           "internalType":"uint256",
+           "name":"",
+           "type":"uint256"
+        }
+     ],
+     "stateMutability":"view",
+     "type":"function"
+  },
+  {
+     "inputs":[
+        
+     ],
+     "name":"bucketIndex",
+     "outputs":[
+        {
+           "internalType":"uint256",
+           "name":"",
+           "type":"uint256"
+        }
+     ],
+     "stateMutability":"view",
+     "type":"function"
+  },
+  {
+     "inputs":[
+        {
+           "internalType":"uint256",
+           "name":"amountToBorrowInWETH",
+           "type":"uint256"
+        }
+     ],
+     "name":"calculateCollateral",
+     "outputs":[
+        {
+           "internalType":"uint256",
+           "name":"collateralInWstETH",
+           "type":"uint256"
+        }
+     ],
+     "stateMutability":"pure",
+     "type":"function"
+  },
+  {
+     "inputs":[
+        {
+           "internalType":"address",
+           "name":"",
+           "type":"address"
+        }
+     ],
+     "name":"collateralProviderToCrossColletralAmount",
+     "outputs":[
+        {
+           "internalType":"uint256",
+           "name":"",
+           "type":"uint256"
+        }
+     ],
+     "stateMutability":"view",
+     "type":"function"
+  },
+  {
+     "inputs":[
+        {
+           "internalType":"address",
+           "name":"",
+           "type":"address"
+        }
+     ],
+     "name":"collateralProviderToSuppliedAmount",
+     "outputs":[
+        {
+           "internalType":"uint256",
+           "name":"",
+           "type":"uint256"
+        }
+     ],
+     "stateMutability":"view",
+     "type":"function"
+  },
+  {
+     "inputs":[
+        {
+           "internalType":"uint256",
+           "name":"amount",
+           "type":"uint256"
+        }
+     ],
+     "name":"depositCollateralForLiquidation",
+     "outputs":[
+        
+     ],
+     "stateMutability":"nonpayable",
+     "type":"function"
+  },
+  {
+     "inputs":[
+        {
+           "internalType":"address",
+           "name":"_address",
+           "type":"address"
+        }
+     ],
+     "name":"elligibleForLiquidationBorrowers",
+     "outputs":[
+        {
+           "internalType":"bool",
+           "name":"",
+           "type":"bool"
+        }
+     ],
+     "stateMutability":"view",
+     "type":"function"
+  },
+  {
+     "inputs":[
+        
+     ],
+     "name":"elligibleForLiquidationPool",
+     "outputs":[
+        {
+           "internalType":"bool",
+           "name":"",
+           "type":"bool"
+        }
+     ],
+     "stateMutability":"view",
+     "type":"function"
+  },
+  {
+     "inputs":[
+        
+     ],
+     "name":"end_epoch",
+     "outputs":[
+        
+     ],
+     "stateMutability":"nonpayable",
+     "type":"function"
+  },
+  {
+     "inputs":[
+        
+     ],
+     "name":"epoch",
+     "outputs":[
+        {
+           "internalType":"uint256",
+           "name":"",
+           "type":"uint256"
+        }
+     ],
+     "stateMutability":"view",
+     "type":"function"
+  },
+  {
+     "inputs":[
+        
+     ],
+     "name":"epochStarted",
+     "outputs":[
+        {
+           "internalType":"bool",
+           "name":"",
+           "type":"bool"
+        }
+     ],
+     "stateMutability":"view",
+     "type":"function"
+  },
+  {
+     "inputs":[
+        
+     ],
+     "name":"epochTime",
+     "outputs":[
+        {
+           "internalType":"uint256",
+           "name":"",
+           "type":"uint256"
+        }
+     ],
+     "stateMutability":"view",
+     "type":"function"
+  },
+  {
+     "inputs":[
+        
+     ],
+     "name":"getAuctionInfo",
+     "outputs":[
+        {
+           "internalType":"address",
+           "name":"",
+           "type":"address"
+        },
+        {
+           "internalType":"uint256",
+           "name":"",
+           "type":"uint256"
+        },
+        {
+           "internalType":"uint256",
+           "name":"",
+           "type":"uint256"
+        },
+        {
+           "internalType":"uint256",
+           "name":"",
+           "type":"uint256"
+        },
+        {
+           "internalType":"uint256",
+           "name":"",
+           "type":"uint256"
+        },
+        {
+           "internalType":"uint256",
+           "name":"",
+           "type":"uint256"
+        },
+        {
+           "internalType":"uint256",
+           "name":"",
+           "type":"uint256"
+        },
+        {
+           "internalType":"address",
+           "name":"",
+           "type":"address"
+        },
+        {
+           "internalType":"address",
+           "name":"",
+           "type":"address"
+        },
+        {
+           "internalType":"address",
+           "name":"",
+           "type":"address"
+        }
+     ],
+     "stateMutability":"view",
+     "type":"function"
+  },
+  {
+     "inputs":[
+        
+     ],
+     "name":"getBalanceOnAave",
+     "outputs":[
+        {
+           "internalType":"uint256",
+           "name":"",
+           "type":"uint256"
+        }
+     ],
+     "stateMutability":"view",
+     "type":"function"
+  },
+  {
+     "inputs":[
+        
+     ],
+     "name":"getBondPrice",
+     "outputs":[
+        {
+           "internalType":"uint256",
+           "name":"",
+           "type":"uint256"
+        }
+     ],
+     "stateMutability":"view",
+     "type":"function"
+  },
+  {
+     "inputs":[
+        
+     ],
+     "name":"getCollateralAddress",
+     "outputs":[
+        {
+           "internalType":"address",
+           "name":"",
+           "type":"address"
+        }
+     ],
+     "stateMutability":"view",
+     "type":"function"
+  },
+  {
+     "inputs":[
+        {
+           "internalType":"address",
+           "name":"_address",
+           "type":"address"
+        }
+     ],
+     "name":"getDebt",
+     "outputs":[
+        {
+           "internalType":"uint256",
+           "name":"",
+           "type":"uint256"
+        }
+     ],
+     "stateMutability":"view",
+     "type":"function"
+  },
+  {
+     "inputs":[
+        
+     ],
+     "name":"getDepositFeeRate",
+     "outputs":[
+        {
+           "internalType":"uint256",
+           "name":"",
+           "type":"uint256"
+        }
+     ],
+     "stateMutability":"view",
+     "type":"function"
+  },
+  {
+     "inputs":[
+        
+     ],
+     "name":"getDepositSize",
+     "outputs":[
+        {
+           "internalType":"uint256",
+           "name":"",
+           "type":"uint256"
+        }
+     ],
+     "stateMutability":"view",
+     "type":"function"
+  },
+  {
+     "inputs":[
+        
+     ],
+     "name":"getInterestInfo",
+     "outputs":[
+        {
+           "internalType":"uint256",
+           "name":"",
+           "type":"uint256"
+        },
+        {
+           "internalType":"uint256",
+           "name":"",
+           "type":"uint256"
+        }
+     ],
+     "stateMutability":"view",
+     "type":"function"
+  },
+  {
+     "inputs":[
+        {
+           "internalType":"uint256",
+           "name":"borrowAmount",
+           "type":"uint256"
+        }
+     ],
+     "name":"getInterestPaidByBorrowerToGetFullCollateral",
+     "outputs":[
+        {
+           "internalType":"uint256",
+           "name":"",
+           "type":"uint256"
+        }
+     ],
+     "stateMutability":"view",
+     "type":"function"
+  },
+  {
+     "inputs":[
+        
+     ],
+     "name":"getLUP",
+     "outputs":[
+        {
+           "internalType":"uint256",
+           "name":"",
+           "type":"uint256"
+        }
+     ],
+     "stateMutability":"view",
+     "type":"function"
+  },
+  {
+     "inputs":[
+        
+     ],
+     "name":"getPoolAddress",
+     "outputs":[
+        {
+           "internalType":"address",
+           "name":"",
+           "type":"address"
+        }
+     ],
+     "stateMutability":"view",
+     "type":"function"
+  },
+  {
+     "inputs":[
+        
+     ],
+     "name":"getPoolDebt",
+     "outputs":[
+        {
+           "internalType":"uint256",
+           "name":"",
+           "type":"uint256"
+        }
+     ],
+     "stateMutability":"view",
+     "type":"function"
+  },
+  {
+     "inputs":[
+        
+     ],
+     "name":"getQuoteTokenAddress",
+     "outputs":[
+        {
+           "internalType":"address",
+           "name":"",
+           "type":"address"
+        }
+     ],
+     "stateMutability":"view",
+     "type":"function"
+  },
+  {
+     "inputs":[
+        {
+           "internalType":"address",
+           "name":"",
+           "type":"address"
+        }
+     ],
+     "name":"interestEarnedByUser",
+     "outputs":[
+        {
+           "internalType":"uint256",
+           "name":"",
+           "type":"uint256"
+        }
+     ],
+     "stateMutability":"view",
+     "type":"function"
+  },
+  {
+     "inputs":[
+        {
+           "internalType":"address",
+           "name":"",
+           "type":"address"
+        }
+     ],
+     "name":"kickerToBondAmount",
+     "outputs":[
+        {
+           "internalType":"uint256",
+           "name":"",
+           "type":"uint256"
+        }
+     ],
+     "stateMutability":"view",
+     "type":"function"
+  },
+  {
+     "inputs":[
+        {
+           "internalType":"uint256",
+           "name":"amount",
+           "type":"uint256"
+        }
+     ],
+     "name":"lendQuoteToken",
+     "outputs":[
+        
+     ],
+     "stateMutability":"nonpayable",
+     "type":"function"
+  },
+  {
+     "inputs":[
+        
+     ],
+     "name":"limitbucketIndex",
+     "outputs":[
+        {
+           "internalType":"uint256",
+           "name":"",
+           "type":"uint256"
+        }
+     ],
+     "stateMutability":"view",
+     "type":"function"
+  },
+  {
+     "inputs":[
+        
+     ],
+     "name":"liquidationProxy",
+     "outputs":[
+        {
+           "internalType":"contract LiquidationProxy",
+           "name":"",
+           "type":"address"
+        }
+     ],
+     "stateMutability":"view",
+     "type":"function"
+  },
+  {
+     "inputs":[
+        
+     ],
+     "name":"morphoVault",
+     "outputs":[
+        {
+           "internalType":"contract ILendvestMorphoVault",
+           "name":"",
+           "type":"address"
+        }
+     ],
+     "stateMutability":"view",
+     "type":"function"
+  },
+  {
+     "inputs":[
+        
+     ],
+     "name":"owner",
+     "outputs":[
+        {
+           "internalType":"address",
+           "name":"",
+           "type":"address"
+        }
+     ],
+     "stateMutability":"view",
+     "type":"function"
+  },
+  {
+     "inputs":[
+        
+     ],
+     "name":"pool",
+     "outputs":[
+        {
+           "internalType":"contract IERC20Pool",
+           "name":"",
+           "type":"address"
+        }
+     ],
+     "stateMutability":"view",
+     "type":"function"
+  },
+  {
+     "inputs":[
+        
+     ],
+     "name":"poolInfoUtils",
+     "outputs":[
+        {
+           "internalType":"contract IPoolInfoUtils",
+           "name":"",
+           "type":"address"
+        }
+     ],
+     "stateMutability":"view",
+     "type":"function"
+  },
+  {
+     "inputs":[
+        
+     ],
+     "name":"rate",
+     "outputs":[
+        {
+           "internalType":"uint256",
+           "name":"",
+           "type":"uint256"
+        }
+     ],
+     "stateMutability":"view",
+     "type":"function"
+  },
+  {
+     "inputs":[
+        {
+           "internalType":"uint256",
+           "name":"collateralAmountToPull_",
+           "type":"uint256"
+        }
+     ],
+     "name":"repay",
+     "outputs":[
+        
+     ],
+     "stateMutability":"nonpayable",
+     "type":"function"
+  },
+  {
+     "inputs":[
+        {
+           "internalType":"uint256",
+           "name":"collateralAmountToPull_",
+           "type":"uint256"
+        },
+        {
+           "internalType":"uint256",
+           "name":"maxQuoteTokenAmountToRepay_",
+           "type":"uint256"
+        }
+     ],
+     "name":"repayTest",
+     "outputs":[
+        
+     ],
+     "stateMutability":"nonpayable",
+     "type":"function"
+  },
+  {
+     "inputs":[
+        {
+           "internalType":"uint256",
+           "name":"_bucketIndex",
+           "type":"uint256"
+        }
+     ],
+     "name":"setBucketIndex",
+     "outputs":[
+        
+     ],
+     "stateMutability":"nonpayable",
+     "type":"function"
+  },
+  {
+     "inputs":[
+        {
+           "internalType":"uint256",
+           "name":"mints",
+           "type":"uint256"
+        }
+     ],
+     "name":"setEpochTime",
+     "outputs":[
+        
+     ],
+     "stateMutability":"nonpayable",
+     "type":"function"
+  },
+  {
+     "inputs":[
+        {
+           "internalType":"uint256",
+           "name":"_limitBucketIndex",
+           "type":"uint256"
+        }
+     ],
+     "name":"setLimitBucketIndex",
+     "outputs":[
+        
+     ],
+     "stateMutability":"nonpayable",
+     "type":"function"
+  },
+  {
+     "inputs":[
+        {
+           "internalType":"address",
+           "name":"_pool",
+           "type":"address"
+        }
+     ],
+     "name":"setVault",
+     "outputs":[
+        
+     ],
+     "stateMutability":"nonpayable",
+     "type":"function"
+  },
+  {
+     "inputs":[
+        {
+           "internalType":"uint256",
+           "name":"_percentage",
+           "type":"uint256"
+        }
+     ],
+     "name":"setX",
+     "outputs":[
+        
+     ],
+     "stateMutability":"nonpayable",
+     "type":"function"
+  },
+  {
+     "inputs":[
+        {
+           "internalType":"uint256",
+           "name":"_percentage",
+           "type":"uint256"
+        }
+     ],
+     "name":"setY",
+     "outputs":[
+        
+     ],
+     "stateMutability":"nonpayable",
+     "type":"function"
+  },
+  {
+     "inputs":[
+        
+     ],
+     "name":"startAuction",
+     "outputs":[
+        
+     ],
+     "stateMutability":"nonpayable",
+     "type":"function"
+  },
+  {
+     "inputs":[
+        {
+           "internalType":"uint256",
+           "name":"mint",
+           "type":"uint256"
+        }
+     ],
+     "name":"start_epoch",
+     "outputs":[
+        
+     ],
+     "stateMutability":"nonpayable",
+     "type":"function"
+  },
+  {
+     "inputs":[
+        {
+           "internalType":"address",
+           "name":"",
+           "type":"address"
+        }
+     ],
+     "name":"supplierToAmount",
+     "outputs":[
+        {
+           "internalType":"uint256",
+           "name":"",
+           "type":"uint256"
+        }
+     ],
+     "stateMutability":"view",
+     "type":"function"
+  },
+  {
+     "inputs":[
+        
+     ],
+     "name":"totalAmountOfBorrowed",
+     "outputs":[
+        {
+           "internalType":"uint256",
+           "name":"",
+           "type":"uint256"
+        }
+     ],
+     "stateMutability":"view",
+     "type":"function"
+  },
+  {
+     "inputs":[
+        
+     ],
+     "name":"totalAmountOfCollateral",
+     "outputs":[
+        {
+           "internalType":"uint256",
+           "name":"",
+           "type":"uint256"
+        }
+     ],
+     "stateMutability":"view",
+     "type":"function"
+  },
+  {
+     "inputs":[
+        
+     ],
+     "name":"totalAmountOfDebt",
+     "outputs":[
+        {
+           "internalType":"uint256",
+           "name":"",
+           "type":"uint256"
+        }
+     ],
+     "stateMutability":"view",
+     "type":"function"
+  },
+  {
+     "inputs":[
+        
+     ],
+     "name":"totalAmountOfQuoteToken",
+     "outputs":[
+        {
+           "internalType":"uint256",
+           "name":"",
+           "type":"uint256"
+        }
+     ],
+     "stateMutability":"view",
+     "type":"function"
+  },
+  {
+     "inputs":[
+        
+     ],
+     "name":"totalAmountOnAave",
+     "outputs":[
+        {
+           "internalType":"uint256",
+           "name":"",
+           "type":"uint256"
+        }
+     ],
+     "stateMutability":"view",
+     "type":"function"
+  },
+  {
+     "inputs":[
+        
+     ],
+     "name":"totalExtraAmount",
+     "outputs":[
+        {
+           "internalType":"uint256",
+           "name":"",
+           "type":"uint256"
+        }
+     ],
+     "stateMutability":"view",
+     "type":"function"
+  },
+  {
+     "inputs":[
+        
+     ],
+     "name":"totalHelpingCollateral",
+     "outputs":[
+        {
+           "internalType":"uint256",
+           "name":"",
+           "type":"uint256"
+        }
+     ],
+     "stateMutability":"view",
+     "type":"function"
+  },
+  {
+     "inputs":[
+        
+     ],
+     "name":"weth",
+     "outputs":[
+        {
+           "internalType":"address",
+           "name":"",
+           "type":"address"
+        }
+     ],
+     "stateMutability":"view",
+     "type":"function"
+  },
+  {
+     "inputs":[
+        {
+           "internalType":"uint256",
+           "name":"amount",
+           "type":"uint256"
+        }
+     ],
+     "name":"withdrawCollateralForLiquidation",
+     "outputs":[
+        
+     ],
+     "stateMutability":"nonpayable",
+     "type":"function"
+  },
+  {
+     "inputs":[
+        {
+           "internalType":"uint256",
+           "name":"amount",
+           "type":"uint256"
+        }
+     ],
+     "name":"withdrawCollateralFromAjnaTest",
+     "outputs":[
+        
+     ],
+     "stateMutability":"nonpayable",
+     "type":"function"
+  },
+  {
+     "inputs":[
+        {
+           "internalType":"uint256",
+           "name":"amount",
+           "type":"uint256"
+        }
+     ],
+     "name":"withdrawQuoteToken",
+     "outputs":[
+        
+     ],
+     "stateMutability":"nonpayable",
+     "type":"function"
+  },
+  {
+     "inputs":[
+        {
+           "internalType":"uint256",
+           "name":"amount",
+           "type":"uint256"
+        }
+     ],
+     "name":"withdrawQuoteTokenFromAaveTest",
+     "outputs":[
+        
+     ],
+     "stateMutability":"nonpayable",
+     "type":"function"
+  },
+  {
+     "inputs":[
+        {
+           "internalType":"uint256",
+           "name":"amount",
+           "type":"uint256"
+        }
+     ],
+     "name":"withdrawQuoteTokenFromAjnaTest",
+     "outputs":[
+        
+     ],
+     "stateMutability":"nonpayable",
+     "type":"function"
+  },
+  {
+     "inputs":[
+        
+     ],
+     "name":"wsteth",
+     "outputs":[
+        {
+           "internalType":"address",
+           "name":"",
+           "type":"address"
+        }
+     ],
+     "stateMutability":"view",
+     "type":"function"
+  }
 ];
