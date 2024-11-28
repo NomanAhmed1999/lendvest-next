@@ -22,7 +22,7 @@ import Loader from '@/components/custom/loader';
 
 function Beta() {
 
-  const [loader, setLoader] = useState(false)
+  const [loader, setLoader] = useState(false);
   const [count, setCount] = useState(0)
   const [address, setAddress] = useState('');
   const [balance, setBalance] = useState('');
